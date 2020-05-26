@@ -5,6 +5,8 @@ const bodyParser=require('body-parser');
 
 const dishRouter = require("./routes/dishRouter");
 
+const promoRouters = require("./routes/promoRouters");
+
 const hostname="localhost";
 const port = 3000;
 
@@ -32,6 +34,8 @@ app.delete('/dishes/:dishId',(req,res,next) => {
 }) */
 
 app.use('/dishes',dishRouter);
+
+app.use('/promotions', promoRouters);
 
 
 app.use(express.static(__dirname +'/public'));
